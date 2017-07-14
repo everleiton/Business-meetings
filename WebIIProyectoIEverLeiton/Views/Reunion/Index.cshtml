@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebIIProyectoIEverLeiton.Models.Reunion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Virtual)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Virtual)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdReunion }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdReunion }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdReunion })
+        </td>
+    </tr>
+}
+
+</table>
